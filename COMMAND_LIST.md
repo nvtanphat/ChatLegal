@@ -76,7 +76,17 @@ uv run pytest tests/test_reranker.py
 uv run evaluate-rag
 ```
 
-## 6. Lệnh Tiện ích khác
+## 6. Trực quan hóa Dữ liệu (Visualization)
+
+```bash
+# Cài đặt thư viện hỗ trợ (đã được thêm vào pyproject.toml)
+uv sync
+
+# Chạy Jupyter Notebook để xem phân tích dữ liệu
+uv run jupyter notebook notebooks/data_visualization.ipynb
+```
+
+## 7. Lệnh Tiện ích khác
 
 ```bash
 # Kiểm tra định dạng code (Linting)

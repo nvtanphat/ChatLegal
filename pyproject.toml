@@ -26,6 +26,12 @@ dependencies = [
   "uvicorn>=0.31.0",
   "sentencepiece>=0.2.1",
   "protobuf>=6.33.5",
+  "pandas>=2.3.3",
+  "matplotlib>=3.10.8",
+  "seaborn>=0.13.2",
+  "notebook>=7.5.5",
+  "ipykernel>=7.2.0",
+  "scikit-learn>=1.8.0",
 ]
 
 [dependency-groups]
