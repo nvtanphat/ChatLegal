@@ -1,0 +1,48 @@
+llm:
+  provider: ollama
+  host: "http://localhost:11434"
+  model: "qwen3:8b"
+  timeout_seconds: 120
+  temperature: 0.1
+
+embedding:
+  model_name: "huyydangg/DEk21_hcmute_embedding"
+  use_vi_tokenizer: true
+  batch_size: 32
+  normalize_embeddings: true
+
+reranker:
+  enabled: true
+  model_name: "AITeamVN/Vietnamese_Reranker"
+  top_k: 4
+  pool_size: 6
+
+retrieval:
+  top_k_dense: 8
+  top_k_dense_qa: 4
+  top_k_lexical: 8
+  top_k_final: 6
+  min_score: 0.05
+  use_qa_collection: true
+  qa_collection_name: "qa_collection"
+  query_reflection:
+    use_llm: false
+  multi_query:
+    enabled: true
+    variants: 2
+    use_llm: false
+    dense_weight: 0.9
+    lexical_weight: 0.9
+  hyde:
+    enabled: false
+    max_chars: 400
+    dense_weight: 0.8
+  metadata_filter:
+    enabled: true
+    fallback_unfiltered: true
+
+storage:
+  chroma_dir: "data/vectordb/chroma"
+  collection_name: "legal_chunks"
+  mongo_uri: "mongodb://localhost:27017"
+  mongo_db: "vn_law_chatbot"
